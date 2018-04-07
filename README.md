@@ -12,7 +12,7 @@
 
 - ```tmux/tmux-*-fix.diff``` … [tmux 2.3 以降において East Asian Ambiguous Character を全角文字の幅で表示する][GST1]
 - ```mutt/mutt-*-fix.diff``` … [mutt 1.9.0 以降において East Asian Ambiguous Character を全角文字の幅で表示する ][GST2]
-- ```dropbear/dropbear-*.diff``` … [Debian noroot 環境において dropbear の動作に不具合が生じる問題を修正するための差分ファイル ][GST3]
+- ```dropbear/dropbear-*.diff``` … [Debian noroot 環境において dropbear の動作に不具合が生じる問題を修正するための差分ファイル][GST3]
 - ```libandroid-shmem/libandroid-shmem-termux-0.2_1-fix.diff``` … [Termux に移植された libandroid-shmem.so を Debian noroot 環境に再移植するための差分ファイル][GST4]
 
 <!-- 外部リンク一覧 -->
