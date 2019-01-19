@@ -657,10 +657,10 @@ index 1d294ed2..f4f9208a 100644
  
  
 diff --git a/main.c b/main.c
-index 30defd6e..2011c3fb 100644
+index 30defd6e..13d3e7be 100644
 --- a/main.c
 +++ b/main.c
-@@ -271,26 +271,28 @@ static void show_version (void)
+@@ -271,26 +271,26 @@ static void show_version (void)
      "-USE_SETGID  "
  #endif
  
@@ -688,14 +688,14 @@ index 30defd6e..2011c3fb 100644
      "-USE_FCNTL  "
  #endif
  
- #ifdef USE_FLOCK
-     "+USE_FLOCK   "
+-#ifdef USE_FLOCK
+-    "+USE_FLOCK   "
 +#if defined(USE_FLOCK) || defined(NO_USE_HARDLINK)
 +	"+USE_FLOCK   "
  #else
      "-USE_FLOCK   "
  #endif
-@@ -455,6 +457,12 @@ static void show_version (void)
+@@ -455,6 +455,12 @@ static void show_version (void)
  #else
      "-LOCALES_HACK  "
  #endif
