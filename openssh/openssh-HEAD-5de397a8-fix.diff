@@ -91,7 +91,7 @@ index ffac5d2c..44e3b3a7 100644
  		options->address_family = AF_UNSPEC;
  
 diff --git a/sftp-server.c b/sftp-server.c
-index 19a132bd..378ad02a 100644
+index 19a132bd..d82a5ccf 100644
 --- a/sftp-server.c
 +++ b/sftp-server.c
 @@ -51,6 +51,17 @@
@@ -123,7 +123,7 @@ index 19a132bd..378ad02a 100644
 + * return 0
 + */
 +static int
-+hasprefix(char *prefix, char *str) {
++has_prefix(char *prefix, char *str) {
 +	while (*prefix && *str && (*(prefix) == *(str))) {
 +		prefix++;
 +		str++;
