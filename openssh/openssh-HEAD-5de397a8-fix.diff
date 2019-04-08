@@ -91,7 +91,7 @@ index ffac5d2c..44e3b3a7 100644
  		options->address_family = AF_UNSPEC;
  
 diff --git a/sftp-server.c b/sftp-server.c
-index 19a132bd..337a8524 100644
+index 19a132bd..9f9e093f 100644
 --- a/sftp-server.c
 +++ b/sftp-server.c
 @@ -51,6 +51,16 @@
@@ -102,7 +102,7 @@ index 19a132bd..337a8524 100644
 +#ifdef DEBIAN_NOROOT
 +#ifdef USERLAND
 +#define HIDDEN_PREFIX ".proot"
-+#endif 
++#endif
 +#ifndef USERLAND
 +#define HIDDEN_PREFIX ".l2s."
 +#endif
@@ -117,8 +117,8 @@ index 19a132bd..337a8524 100644
  		while ((dp = readdir(dirp)) != NULL) {
 +/* Fix to allow SSH2_FXP_READDIR to hide files with given prefix ".l2s." or ".proot". */
 +#ifdef DEBIAN_NOROOT
-+            if (strcmp((const char *)(dp->d_name), HIDDEN_PREFIX) == 0)
-+                continue;
++			if (strncmp((const char *)(dp->d_name), HIDDEN_PREFIX, sizeof(HIDDEN_PREFIX)) == 0)
++				continue;
 +#endif
  			if (count >= nstats) {
  				nstats *= 2;
